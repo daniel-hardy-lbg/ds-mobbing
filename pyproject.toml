@@ -1,0 +1,70 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "totally-fair-loans"  # Add a name for your package Examples: totally-fair-loans
+version = "2.0.0"  # this indicates version as this will be the second we will add "1.0.0"
+description = "LBG Loan Processing System with Configurable Risk Thresholds"
+authors = []  # Add [{name = "Your Name", email = "..."}]
+readme = "README.md"
+requires-python = ">=3.9"
+
+# Core dependencies (needed to run the application)
+
+dependencies = [
+    "pandas>=2.0.0,<3.0.0",      # CSV processing
+    "click>=8.0.0,<9.0.0",       # CLI interface
+    "openpyxl>=3.1.0,<4.0.0",    # Excel output
+]
+
+# Optional dependencies for different use cases
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0,<9.0.0",
+    "pytest-cov>=4.1.0,<5.0.0",
+    "black>=24.0.0",
+    "ruff>=0.1.0",
+    "mypy>=1.8.0",
+    "pre-commit>=3.6.0"
+]
+
+# For documentation (provided by instructors)
+docs = [
+    "mkdocs>=1.5.0",
+    "mkdocs-material>=9.0.0",
+]
+
+[project.urls]
+Homepage = "https://ghe.service.group/Hamza-Albakkar/lbg-bootcamp"
+Repository = "https://ghe.service.group/Hamza-Albakkar/lbg-bootcamp"
+
+# Package configuration for src layout
+[tool.setuptools]
+packages = ["src"]
+package-dir = {"" = "."}
+
+# Entry points for CLI commands
+[project.scripts]
+loan-calculator = "src.main:main"
+loan-batch = "src.main:main"
+
+# Tool configurations
+[tool.black]
+line-length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v"
+
+[tool.coverage.run]
+omit = ["src/main.py"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+]

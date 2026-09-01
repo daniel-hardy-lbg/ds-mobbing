@@ -1,0 +1,83 @@
+site_name: LBG Data Science Bootcamp
+site_description: Collaborative Python development workshop for LBG Data Science graduates
+site_url: https://h3-albakar.github.io/lbg_bootcamp
+
+repo_name: h3-albakar/lbg_bootcamp
+repo_url: https://github.com/h3-albakar/lbg_bootcamp
+
+theme:
+  name: material
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - navigation.expand
+    - navigation.indexes
+    - toc.follow
+    - toc.integrate
+    - search.highlight
+    - search.share
+    - search.suggest
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+
+  icon:
+    repo: fontawesome/brands/github
+    logo: material/school
+
+nav:
+  - Home: index.md
+  - Sessions:
+    - Session 1 - Building Your First Tool:
+      - Core Material: sessions/session1.md
+      - Additional Challenges: sessions/session1-additional.md
+    - Session 2 - Your First Production Ticket:
+      - Overview: sessions/session2.md
+      - Part 1 - Project Setup: sessions/session2-part1.md
+      - Part 2 - Implement Business Logic: sessions/session2-part2.md
+      - Part 3 - Testing & Deployment: sessions/session2-part3.md
+      - Additional Challenges: sessions/session2-additional.md
+
+markdown_extensions:
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/h3-albakar/lbg_bootcamp

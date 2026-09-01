@@ -1,0 +1,17 @@
+# Requirements for LBG Loan Processing System
+# This is the OLD STYLE of managing dependencies
+# In Session 2, you'll learn to use pyproject.toml instead!
+
+# Production dependencies (what users need to run the app)
+# Using flexible versions (>=) to ensure compatibility with modern Python versions
+pandas>=2.0.0
+click>=8.1.0
+openpyxl>=3.1.0
+
+# Development dependencies (what developers need)
+pytest>=8.0.0
+pytest-cov>=4.1.0
+black>=24.0.0
+ruff>=0.1.0
+mypy>=1.8.0
+pre-commit>=3.6.0
